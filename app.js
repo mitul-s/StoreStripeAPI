@@ -13,10 +13,13 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
+// Set Static folder
+app.use(express.static(`${__dirname}/public`));
+
 // INDEX Route
 app.get('/', (req, res) => {
   res.render('index');
-})
+});
 
 
 const port = process.env.PORT || 5000;

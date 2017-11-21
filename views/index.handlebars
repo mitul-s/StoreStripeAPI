@@ -1,0 +1,26 @@
+<section class="py-2">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <h1 class="display-3 mt-3 pt-5">
+        GONE GIRL
+      </h1>
+      <h5>The E-Book</h5>
+      <p class="lead mb-3">Read the most thrilling book of the year.</p>
+      <form class="mb-3" action="/your-server-side-code" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_mj5vDOA1Dx6KksBB1GdyTpra"
+          data-amount="2500"
+          data-name="Gone Girl"
+          data-description="The Gone Girl Ebook"
+          data-image="/img/marketplace.png"
+          data-locale="auto"
+          data-currency="cad">
+        </script>
+      </form>
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="/img/book.jpg" class="img-fluid">
+    </div>
+  </div>
+</section>
