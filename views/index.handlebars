@@ -1,12 +1,11 @@
 <section class="py-2">
-  <div class="row">
-    <div class="col-md-6 text-center">
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
       <h1 class="display-3 mt-3 pt-5">
         GONE GIRL
       </h1>
-      <h5>The E-Book</h5>
       <p class="lead mb-3">Read the most thrilling book of the year.</p>
-      <form class="mb-3" action="/charge" method="POST">
+      <!-- <form class="mb-3" action="/charge" method="POST">
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="{{stripePublishableKey}}"
@@ -21,11 +20,65 @@
           // Hide default stripe button / change it
           document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
         </script>
-        <button type="submit" class="btn btn-dark text-white btn-lg">Purchase for $25</button>
-      </form>
-    </div>
-    <div class="col-md-6 text-center">
-        <img src="/img/book.jpg" class="img-fluid">
+        <button type="submit" class="btn btn-info text-white btn-lg">Purchase for $25</button>
+      </form> -->
     </div>
   </div>
+
+  <div class="row">
+  <div class="col-sm-12 col-md-6 mb-3">
+    <div class="card">
+      <img class="card-img-top" src="https://designrevision.com/docs/shards/images/2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">License to Cuba</h4>
+        <p class="card-text">He seems sinking under the evidence could not only grieve and a visit. The father is to bless and placed in his length hid...</p>
+        <form action="/charge" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{stripePublishableKey}}"
+            data-amount="2500"
+            data-name="Gone Girl"
+            data-description="The Gone Girl Ebook"
+            data-image="/img/marketplace.png"
+            data-locale="auto"
+            data-currency="cad">
+          </script>
+          <script>
+            // Hide default stripe button / change it
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+          </script>
+          <button type="submit" class="btn btn-primary">Purchase for $25</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="card">
+      <img class="card-img-top" src="https://designrevision.com/docs/shards/images/1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">Surf in Eur</h4>
+        <p class="card-text">He seems sinking under the evidence could not only grieve and a visit. The father is to bless and placed in his length hid...</p>
+        <form action="/charge" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{stripePublishableKey}}"
+            data-amount="2500"
+            data-name="Gone Girl"
+            data-description="The Gone Girl Ebook"
+            data-image="/img/marketplace.png"
+            data-locale="auto"
+            data-currency="cad">
+          </script>
+          <script>
+            // Hide default stripe button / change it
+            document.getElementsByClassName('stripe-button-el')[1].style.display = 'none';
+          </script>
+          <button type="submit" class="btn btn-primary">Purchase for $25</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </section>
