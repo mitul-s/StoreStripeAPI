@@ -1,6 +1,6 @@
 const express    = require('express');
 const keys = require('./config/keys');
-const stripe     = require('stripe')("keys.stripeSecretKey");
+const stripe     = require('stripe')(keys.stripeSecretKey);
 const bodyParser = require('body-parser');
 const expHandleBars = require("express-handlebars");
 
@@ -39,7 +39,7 @@ app.post('/charge', (req, res) => {
         currency: 'cad',
         customer: customer.id
     }))
-    .then(charge => res.render(`success`));
+    .then(charge => res.render("success"));
 });
 
 
