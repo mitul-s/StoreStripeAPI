@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" />
+    <title>Socket Chat</title>
+    <style>
+        #messages {
+            height: 300px;
+            border: 1px solid lightgrey;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui text container">
+        <div class="ui very padded segment">
+            <h1>Socket Chat</h1>
+            <div id="clear" class="ui teal button">Clear</div>
+            <div class="ui divider"></div>
+            <div id="status"></div>
+            <div id="chat">
+                <div class="ui input fluid">
+                    <input type="text" id="username" placeholder="Enter name.">
+                </div>
+                <div class="card">
+                    <div id="messages">
+
+                    </div>
+                </div>
+                <br>
+                <div class="ui form">
+                    <textarea id="txt" placeholder="Enter your message."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script>
+        (function(){
+            var element = function(id){
+                return document.getElementById(id);
+            }
+            // Get Elements
+            var status = element('status');
+            var messages = element('messages');
+            var txt = element('txt');
+            var username = element('username');
+            var clear = element('clear');
+
+            // Set Default Status
+            var statusDefault = status.textContent;
+
+            var setStatus = function(s){
+                // Set the status
+                status.textContent = s;
+                if(s !== statusDefault){
+                    var delay = setTimeout(function(){
+                        setStatus(statusDefault);
+                    }, 4000);
+                }
+            }
+
+            // Connect to socket.io
+            var socket = io.connect("http://127.0.0.1:4000");
+            
+            // Check if socket is connecting
+            if(socket !== undefined){
+                console.log('Connected!');
+            }
+
+        })();
+    </script>
+</body>
+</html>
