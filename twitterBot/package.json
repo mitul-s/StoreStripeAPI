@@ -4,8 +4,7 @@
   "description": "Twitter bot with functions to tweet back, or tweet to.",
   "main": "app.js",
   "scripts": {
-    "start": "npm app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm app.js"
   },
   "author": "Mitul Shah",
   "license": "ISC",
