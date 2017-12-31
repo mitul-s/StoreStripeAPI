@@ -15,11 +15,6 @@ function getStockData(stock, signal, from) {
     .then((data) => {
         console.log(data.latestPrice);
         stockPrice = data.latestPrice;
-        if (signal === "$") {
-            console.log(stock);
-            const newTweet = '@' + from + ' Price: $' + stockPrice;
-            tweetIt(newTweet);
-        }
     })
     .catch(function(err){
         console.log("Error: " + err);
@@ -36,7 +31,13 @@ function tweetEvent(eventMsg) {
     const from = eventMsg.user.screen_name;
     const signal = text.charAt(replyto.length + 2);
     const stock = text.slice(replyto.length + 3, replyto.length + 7);
-    getStockData(stock, signal, from);   
+
+    if (signal === "$") {
+        getStockData(stock).then(stockPrice => {
+            const newTweet = '@' + from + ' Price: $' + stockPrice;
+            tweetIt(newTweet);
+        });
+    }
 }
 
 

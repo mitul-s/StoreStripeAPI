@@ -9,6 +9,7 @@
   "author": "Mitul Shah",
   "license": "ISC",
   "dependencies": {
+    "node-fetch": "^1.7.3",
     "twit": "^2.2.9"
   }
 }
