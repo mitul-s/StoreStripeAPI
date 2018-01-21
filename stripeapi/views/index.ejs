@@ -1,0 +1,37 @@
+<% include partials/header.ejs %>
+            <h1>Movie Life Preset Collection</h1>
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <img src="https://farm3.staticflickr.com/2849/33170548060_b003d6889e.jpg" class="ui huge image">
+                </div>
+                <div class="eight wide column">
+                    <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quis earum, accusantium est excepturi reprehenderit consectetur omnis dolor praesentium ipsam.</p>
+                    <ul>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                    </ul>
+                    <form action="/charge" method="POST">
+                        <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="<%= stripePublishableKey %>"
+                            data-amount="2500"
+                            data-name="Movie Life"
+                            data-description="Movie Life Lightroom Preset"
+                            data-image="/img/marketplace.png"
+                            data-locale="auto"
+                            data-currency="cad">
+                        </script>
+                        <script>
+                            // Hide default stripe button / change it
+                            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                        </script>
+                        <button type="submit" class="ui vertical animated inverted green button" tabindex="0">
+                            <div class="visible content">Buy Now</div>
+                            <div class="hidden content">
+                                <i class="shop icon"></i>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
